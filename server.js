@@ -4,6 +4,7 @@ const fs = require('fs')
 
 const app = express()
 
+const port = process.env.PORT || 3000
 
 // Set up to use partials served from the folder /views/partials
 hbs.registerPartials(__dirname + '/views/partials')
@@ -65,6 +66,7 @@ app.get('/bad', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000')
+// Dynamic port set for Heroku
+app.listen(port, () => {
+    console.log(`Server is up on port ${port}`)
 })

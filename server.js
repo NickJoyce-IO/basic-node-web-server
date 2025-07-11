@@ -1,8 +1,10 @@
 const express = require('express')
 const hbs = require('hbs')
 const fs = require('fs')
+const helmet = require('helmet')
 
 const app = express()
+app.use(helmet())
 
 const port = process.env.PORT || 3000
 
